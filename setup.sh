@@ -22,6 +22,17 @@
 sudo apt update
 sudo apt upgrade -y
 
+
+#  _                     _           
+# | |                   | |          
+# | |     ___   ___ __ _| | ___  ___ 
+# | |    / _ \ / __/ _` | |/ _ \/ __|
+# | |___| (_) | (_| (_| | |  __/\__ \
+# |______\___/ \___\__,_|_|\___||___/
+
+sudo apt install locales
+sudo dpkg-reconfigure locales
+
 #  ______ _____ _    _ 
 # |___  // ____| |  | |
 #    / /| (___ | |__| |
@@ -31,23 +42,22 @@ sudo apt upgrade -y
 
 sudo apt install -y git zsh
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# TODO Not really understanding the unattended install method
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Fast Syntax Highlighting
 git clone https://github.com/zdharma/fast-syntax-highlighting.git \
 	${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 
 # Autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}\
-	/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # FZF
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-	${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # TODO Copy my zshrc here
 
